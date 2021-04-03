@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Assume test is the database name -->
+        <property name="connection.url">
+            jdbc:mysql://localhost/matriculant
+        </property>
+        <property name="hibernate.connection.username">
+            root
+        </property>
+        <property name="hibernate.connection.password">
+            ##@skrid2002@##
+        </property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+
+        <mapping class="models.hibernate.MatriculantDataEntity"/>
+        <mapping class="models.hibernate.UniversityDataEntity"/>
+
+    </session-factory>
+</hibernate-configuration>
