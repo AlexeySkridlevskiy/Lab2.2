@@ -1,51 +1,31 @@
 package models.hibernate;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name="universityData", schema = "matriculant")
 public class UniversityDataEntity {
-    private Long ID;
-    private String Name;
-    private String Description;
 
     @Id
+    @Setter
+    @Getter
     @GeneratedValue
     @Column(name = "id")
-    public Long getId()
-    {
-        return ID;
-    }
+    private Long ID;
 
-    public void setId(Long ID)
-    {
-        this.ID = ID;
-    }
-
-    @Basic
+    @Setter
+    @Getter
     @Column
-    public String getName()
-    {
-        return Name;
-    }
+    private String Name;
 
-    public void setName(String Name)
-    {
-        this.Name = Name;
-    }
-
-    @Basic
+    @Setter
+    @Getter
     @Column
-    public String getDescription()
-    {
-        return Description;
-    }
-
-    public void setDescription(String Description)
-    {
-        this.Description = Description;
-    }
+    private String Description;
 
     @Override
     public boolean equals(Object o)

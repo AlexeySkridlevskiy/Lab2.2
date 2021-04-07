@@ -1,5 +1,8 @@
 package models.hibernate;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
@@ -7,205 +10,98 @@ import java.util.Objects;
 @Entity
 @Table(name="matriculantData", schema = "matriculant")
 public class MatriculantDataEntity {
-    private Long ID;
-    private String Name;
-    private String Surname;
-    private String Patronymic;
-    private String Gender;
-    private String Nationality;
-    private Date Birthday;
-    private String Postcode;
-    private String Country;
-    private String Region;
-    private String Area;
-    private String City;
-    private String Street;
-    private String House;
-    private String Apartment;
-    private Long Marks;
-    private Long PassingScore;
-    private Integer UniversityId;
 
     @Id
     @GeneratedValue
+    @Getter
+    @Setter
     @Column(name = "ID")
-    public Long getID() {
-        return ID;
-    }
+    private Long ID;
 
-    public void setID(Long id) {
-        this.ID = id;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Surname")
-    public String getSurname() {
-        return Surname;
-    }
+    private String Surname;
 
-    public void setSurname(String Surname) {
-        this.Surname = Surname;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Name")
-    public String getName() {
-        return Name;
-    }
+    private String Name;
 
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Patronymic")
-    public String getPatronymic() {
-        return Patronymic;
-    }
+    private String Patronymic;
 
-    public void setPatronymic(String Patronymic) {
-        this.Patronymic = Patronymic;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Gender")
-    public String getGender() {
-        return Gender;
-    }
+    private String Gender;
 
-    public void setGender(String Gender) {
-        this.Gender = Gender;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Nationality")
-    public String getNationality() {
-        return Nationality;
-    }
+    private String Nationality;
 
-    public void setNationality(String Nationality) {
-        this.Nationality = Nationality;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Birthday")
-    public Date getBirthday() {
-        return Birthday;
-    }
+    private Date Birthday;
 
-    public void setBirthday(Date Birthday) {
-        this.Birthday = Birthday;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Postcode")
-    public String getPostcode() {
-        return Postcode;
-    }
+    private String Postcode;
 
-    public void setPostcode(String Postcode) {
-        this.Postcode = Postcode;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Country")
-    public String getCountry() {
-        return Country;
-    }
+    private String Country;
 
-    public void setCountry(String Country) {
-        this.Country = Country;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Region")
-    public String getRegion() {
-        return Region;
-    }
+    private String Region;
 
-    public void setRegion(String Region) {
-        this.Region = Region;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Area")
-    public String getArea() {
-        return Area;
-    }
+    private String Area;
 
-    public void setArea(String Area) {
-        this.Area = Area;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "City")
-    public String getCity() {
-        return City;
-    }
+    private String City;
 
-    public void setCity(String City) {
-        this.City = City;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Street")
-    public String getStreet() {
-        return Street;
-    }
+    private String Street;
 
-    public void setStreet(String Street) {
-        this.Street = Street;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "House")
-    public String getHouse() {
-        return House;
-    }
+    private String House;
 
-    public void setHouse(String House) {
-        this.House = House;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Apartment")
-    public String getApartment() {
-        return Apartment;
-    }
+    private String Apartment;
 
-    public void setApartment(String Apartment) {
-        this.Apartment = Apartment;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "Marks")
-    public Long getMarks() {
-        return Marks;
-    }
+    private Long Marks;
 
-    public void setMarks(Long Marks) {
-        this.Marks = Marks;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "PassingScore")
-    public Long getPassingScore() {
-        return PassingScore;
-    }
+    private Long PassingScore;
 
-    public void setPassingScore(Long PassingScore) {
-        this.PassingScore = PassingScore;
-    }
-
-    @Basic
+    @Getter
+    @Setter
     @Column(name = "UniversityId")
-    public Integer getUniversityId() {
-        return UniversityId;
-    }
-
-    public void setUniversityId(Integer UniversityId) {
-        this.UniversityId = UniversityId;
-    }
+    private Integer UniversityId;
 
     @Override
     public boolean equals(Object o) {

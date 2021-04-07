@@ -45,25 +45,25 @@ public class ORMRequests{
     }
 
     public List<MatriculantDataEntity> getbyPassingScore() {
-        List<MatriculantDataEntity> result = select("select b.passingScore from MatriculantDataEntity b where b.passingScore > 225");
+        List<MatriculantDataEntity> result = select("select b.PassingScore from MatriculantDataEntity b where b.PassingScore > 225");
         return result;
     }
 
     public Long countMatriculantByScore()
     {
-        Long result = (Long) selectSingle("select count(*) from MatriculantDataEntity where passingScore > 250");
+        Long result = (Long) selectSingle("select count(*) from MatriculantDataEntity where PassingScore > 250");
         return result;
     }
 
     public Long sumMatriculantMarks()
     {
-        Long result = (Long) selectSingle("select sum(marks) from MatriculantDataEntity where gender = 'мужской'");
+        Long result = (Long) selectSingle("select sum(Marks) from MatriculantDataEntity where Gender = 'мужской'");
         return result;
     }
 
     public Long[] MinMaxMarks()
     {
-        Object[] result = (Object[]) selectSingle("select min(marks), max(marks) from MatriculantDataEntity");
+        Object[] result = (Object[]) selectSingle("select min(Marks), max(Marks) from MatriculantDataEntity");
         return Arrays.stream(result).toArray(Long[]::new);
     }
 
@@ -71,7 +71,7 @@ public class ORMRequests{
     {
         List<Pair<MatriculantDataEntity, UniversityDataEntity>> result = select("select new org.javatuples.Pair(b, c) " +
                 "from MatriculantDataEntity b inner join UniversityDataEntity c " +
-                "on b.id = c.id where b.universityId = 3");
+                "on b.id = c.id where b.UniversityId = 3");
         return result;
     }
 
@@ -79,7 +79,7 @@ public class ORMRequests{
     public List<WhereEnterMatriculant> getWhereEnterMatriculant()
     {
         List<WhereEnterMatriculant> result = select("select " +
-                "new models.WhereEnterMatriculant(b.id, b.surname, b.name, b.patronymic, b.birthday, c.name) " +
+                "new models.WhereEnterMatriculant(b.id, b.Surname, b.Name, b.Patronymic, b.Birthday, c.Name) " +
                 "from MatriculantDataEntity b inner join UniversityDataEntity c on b.id = c.id");
         return result;
     }
@@ -102,4 +102,5 @@ class HibernateUtil {
             sessionFactory = buildSessionFactory();
         return sessionFactory;
     }
+
 }
